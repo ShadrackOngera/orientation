@@ -19,12 +19,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 
 
 //Module Routes
+Route::group([
+    'prefix' => 'module',
+], function () {
+    Route::get('/library', [App\Http\Controllers\ModuleController::class, 'libraryModule'])->name('module.library');
+    Route::get('/lab', [App\Http\Controllers\ModuleController::class, 'labsModule'])->name('module.lab');
+    Route::get('/sport', [App\Http\Controllers\ModuleController::class, 'sportsModule'])->name('module.sports');
+    Route::get('/kitchen', [App\Http\Controllers\ModuleController::class, 'kitchenModule'])->name('module.kitchen');
+});
 
