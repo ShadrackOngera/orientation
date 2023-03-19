@@ -15,7 +15,7 @@
             </p>
         </div>
 
-        <div id="carouselExampleIndicators" class="carousel slide">
+        <div id="carouselExampleIndicators" class="carousel slide mb-3">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -44,6 +44,12 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
+        </div>
+        <div class="mb-3">
+            <div class="d-flex justify-content-between">
+                <a href="{{ route('dashboard') }}" class="btn btn-secondary">Dashboard</a>
+                <a href="{{ route('modules.lab') }}" class="btn btn-primary">Next: Labs</a>
+            </div>
         </div>
     </div>
 @endsection

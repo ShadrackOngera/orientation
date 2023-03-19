@@ -26,10 +26,11 @@ Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])-
 Route::group([
     'prefix' => 'module',
 ], function () {
-    Route::get('/library', [App\Http\Controllers\ModuleController::class, 'libraryModule'])->name('module.library');
-    Route::get('/lab', [App\Http\Controllers\ModuleController::class, 'labsModule'])->name('module.lab');
-    Route::get('/sport', [App\Http\Controllers\ModuleController::class, 'sportsModule'])->name('module.sports');
-    Route::get('/kitchen', [App\Http\Controllers\ModuleController::class, 'kitchenModule'])->name('module.kitchen');
+    Route::get('/library', [App\Http\Controllers\ModuleController::class, 'libraryModule'])->name('modules.library');
+    Route::get('/lab', [App\Http\Controllers\ModuleController::class, 'labsModule'])->name('modules.lab');
+    Route::get('/sport', [App\Http\Controllers\ModuleController::class, 'sportsModule'])->name('modules.sports');
+    Route::get('/cafeteria', [App\Http\Controllers\ModuleController::class, 'cafeteriaModule'])->name('modules.cafeteria');
+    Route::get('/classes', [App\Http\Controllers\ModuleController::class, 'classesModule'])->name('modules.classes');
 });
 
 

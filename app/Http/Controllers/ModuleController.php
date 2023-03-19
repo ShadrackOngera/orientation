@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 class ModuleController extends Controller
 {
-    public function kitchenModule(){
+    public function cafeteriaModule(){
 
         //Kitchen Module Controller
-        return view('modules.kitchen');
+        return view('modules.cafeteria');
     }
 
     public function classesModule(){
