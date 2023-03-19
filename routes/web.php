@@ -32,3 +32,13 @@ Route::group([
     Route::get('/kitchen', [App\Http\Controllers\ModuleController::class, 'kitchenModule'])->name('module.kitchen');
 });
 
+
+
+//Admin Routes
+Route::group([
+    'prefix' => 'admin',
+    'middleware' => ['auth',]
+], function () {
+    Route::get('/home', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.home');
+});
+
