@@ -15,4 +15,11 @@ class AdminController extends Controller
             ->with('users_count', $users_count)
             ->with('admins_count', $admins_count);
     }
+
+    public function users(){
+        //show users
+        $users = User::get();
+        return view('admin.users')
+            ->with('users', $users);
+    }
 }

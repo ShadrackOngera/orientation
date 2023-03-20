@@ -45,5 +45,6 @@ Route::group([
     'middleware' => ['auth',]
 ], function () {
     Route::get('/home', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.home');
+    Route::get('/users', [App\Http\Controllers\AdminController::class, 'users'])->name('admin.users');
 });
 
