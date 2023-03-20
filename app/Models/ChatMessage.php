@@ -15,6 +15,6 @@ class ChatMessage extends Model
      * @var array
      */
     protected $fillable = [
-        'chat_id', 'sendable_id', 'sendable_type', 'receivable_type', 'receivable_id', 'content'
+        'chat_id', 'sender_id','receiver_id', 'content'
     ];
 }

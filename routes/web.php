@@ -21,6 +21,10 @@ Auth::routes();
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 
+//chat
+Route::get('/dashboard/chat', [App\Http\Controllers\ChatController::class, 'index'])->name('chat.index');
+Route::post('/dashboard/chats', [App\Http\Controllers\ChatController::class, 'store'])->name('chat.store');
+
 
 //Module Routes
 Route::group([

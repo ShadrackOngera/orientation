@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Chat;
+use App\Models\ChatMessage;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ChatController extends Controller
 {
@@ -12,7 +15,11 @@ class ChatController extends Controller
      */
     public function index()
     {
-        //
+
+        $chatMessages = ChatMessage::get();
+
+        return view('pages.chat')
+            ->with('chatMessages', $chatMessages);
     }
 
     /**
@@ -28,7 +35,22 @@ class ChatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $user = auth()->user();
+//        $user = User::findOrFail(Auth::user());
+
+        $request->validate([
+            'content' => 'required',
+        ]);
+
+
+        $chat = ChatMessage::create([
+            'content' => $request->input('content'),
+            'sender_id' => $user->id,
+            'receiver_id' => 1,
+        ]);
+
+        return redirect()->back();
     }
 
     /**
