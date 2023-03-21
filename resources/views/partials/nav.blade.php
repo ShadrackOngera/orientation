@@ -10,10 +10,17 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
-
             </ul>
 
             <!-- Right Side Of Navbar -->
+            <ul class="navbar-nav ms-auto">
+                <li>
+                    <a href="{{ route('contact') }}"></a>
+                </li>
+                <li>
+                    <a href="{{ route('dashboard') }}"></a>
+                </li>
+            </ul>
             <ul class="navbar-nav ms-auto">
                 <!-- Authentication Links -->
                 @guest

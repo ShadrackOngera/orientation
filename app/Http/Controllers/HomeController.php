@@ -25,4 +25,14 @@ class HomeController extends Controller
     {
         return view('dashboard');
     }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function contact()
+    {
+        return view('pages.contact');
+    }
 }

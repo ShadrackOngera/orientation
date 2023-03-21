@@ -17,4 +17,8 @@ class ChatMessage extends Model
     protected $fillable = [
         'chat_id', 'sender_id','receiver_id', 'content'
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

@@ -4,14 +4,18 @@
         <div>
             <h1>Module 1: School Library</h1>
             <h2>Rueben Marambii Library</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus animi aperiam aspernatur at commodi corporis dicta dolorum fuga inventore, laudantium minima mollitia nam quasi quia quibusdam quidem repellendus sapiente sequi tempore totam unde, veniam? At, dicta dolores enim error ex illo in, nesciunt obcaecati quaerat quis reiciendis velit vitae.
+            <p class="fs-5">
+                Meru University library is a library located at Meru University of Science and Technology (MUST), which is a public university in Meru County, Kenya. The library provides various resources and services to students, faculty, and staff of the university, as well as members of the public.
             </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum fuga obcaecati officiis suscipit ullam? Accusantium debitis eligendi est obcaecati ullam.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab consequatur delectus facere laborum obcaecati pariatur recusandae repellat ullam. Architecto nam nostrum nulla officia perspiciatis recusandae, totam voluptatum! Ad at debitis distinctio labore odio. Accusantium ad commodi consectetur corporis cum cumque deleniti dicta dignissimos, dolor dolorum eligendi eum expedita laudantium magni nam nobis nostrum numquam obcaecati officiis perferendis quae quis repellendus reprehenderit sapiente sequi sit soluta sunt tempore voluptatibus voluptatum. At consequatur debitis dolore est illum officia repellendus rerum voluptatem. Atque dolores dolorum eligendi error magni officia recusandae saepe sapiente, sed sequi sunt suscipit vero voluptates! Architecto assumenda expedita illo mollitia temporibus? Ab asperiores beatae consequatur cupiditate, debitis dicta dolor facilis, harum illum labore magnam molestiae mollitia necessitatibus non odio optio, placeat porro quo repellendus reprehenderit saepe suscipit veritatis vero vitae voluptates? Ad ipsam mollitia natus nobis odit omnis quam tempora. A animi asperiores at doloribus esse, hic id perspiciatis similique.
+            <ul class="fs-5">
+                <li>Access to print and electronic books, journals, and other scholarly materials</li>
+                <li>Reference and research assistance from trained librarians</li>
+                <li>Computer and internet access for research and other academic purposes</li>
+                <li>Interlibrary loan services to request materials from other libraries</li>
+                <li>Special collections and archives of rare or unique materials</li>
+            </ul>
+            <p class="fs-5">
+                The Meru University library is dedicated to supporting the academic and research needs of the university community and promoting a culture of lifelong learning. It is an essential resource for students and faculty at Meru University, and it contributes to the advancement of scholarship and knowledge in Kenya and beyond.
             </p>
         </div>
 

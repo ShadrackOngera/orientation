@@ -20,6 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 
 //chat
 Route::get('/dashboard/chat', [App\Http\Controllers\ChatController::class, 'index'])->name('chat.index');
@@ -46,5 +47,6 @@ Route::group([
 ], function () {
     Route::get('/home', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.home');
     Route::get('/users', [App\Http\Controllers\AdminController::class, 'users'])->name('admin.users');
+    Route::get('/users/export', [App\Http\Controllers\AdminController::class, 'exportPdf'])->name('export.users');
 });
 

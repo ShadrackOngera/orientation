@@ -6,22 +6,30 @@
         <div class="text-center align-items-center">
             <h1 class="display-5 text-muted">{{ config('app.name') }}</h1>
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-8 align-self-center">
                     <p class="fs-6">
                         Welcome to our online orientation system! We are excited to have you here and look forward to helping you navigate your way through our platform. Whether you're a new student, employee, or member of our community, we're here to support you every step of the way. Our orientation program is designed to provide you with all the information you need to succeed, so take your time, explore the site.
                     </p>
                 </div>
                 <div class="col-sm-4">
-                    <img src="{{ asset('images/graduate.jpg') }}" alt="College Student" class="img-fluid">
+                    <img src="{{ asset('images/graduate.jpg') }}" alt="College Student" class="img-fluid rounded-3 shadow-lg">
                 </div>
             </div>
         </div>
-        <div class="py-5"></div>
+        <div class="py-3"></div>
+
+        <div class="row justify-content-center my-5">
+            <div class="col-sm-8 d-grid">
+                <a href="{{ route('dashboard') }}" class="btn btn-success text-white">Start Learning Modules</a>
+            </div>
+        </div>
+
+        <div class="py-3"></div>
         <div class="text-center">
-            <h2 class="text-muted">Features</h2>
+            <h2 class="text-muted title-style">Features</h2>
             <div class="row">
                 <div class="col-sm-6">
-                    <img src="{{ asset('images/college-girl.jpg') }}" alt="College Student" class="img-fluid">
+                    <img src="{{ asset('images/college-girl.jpg') }}" alt="College Student" class="img-fluid shadow-lg rounded-3">
                 </div>
                 <div class="col-sm-6 align-self-center">
                     <ul class="list-unstyled fs-5">

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    //Global class used to show admin home page
     public function index(){
         //admin home page
         $users_count = User::count();
@@ -17,6 +18,7 @@ class AdminController extends Controller
             ->with('admins_count', $admins_count);
     }
 
+    //This global class is used to show the admin all users of the system
     public function users(){
         //show users
         $users = User::get();
@@ -24,10 +26,10 @@ class AdminController extends Controller
             ->with('users', $users);
     }
 
+    //this global class is used to print the users list, which is in the composer.lock DOM PDF configurations
     public function exportPdf(){
-
-        $allUsers = User::orderBy('updated_at', 'DESC')->get();
-        $pdf = Pdf::loadView('admin.users',
+        $allUsers = User::get();
+        $pdf = (new \Barryvdh\DomPDF\PDF)->loadView('admin.users',
             [
                 'allUsers'=>$allUsers,
             ]);
