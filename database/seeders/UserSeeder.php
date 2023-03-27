@@ -23,6 +23,9 @@ class UserSeeder extends Seeder
 
 //        //create permissions
 //        $createPostPermission = Permission::create(['name' => ' post']);
+        $creatAdminPermission = Permission::create(['name' => 'is admin']);
+
+
 //        //Give Permissions
 //        $adminRole->givePermissionTo($createPostPermission);
 

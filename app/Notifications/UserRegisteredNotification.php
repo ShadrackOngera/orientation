@@ -26,21 +26,25 @@ class UserRegisteredNotification extends Notification
      */
     public function via(object $notifiable): array
     {
-        return ['mail'];
+        return ['telegram'];
     }
 
     /**
      * Get the mail representation of the notification.
      */
-    public function toMail(object $notifiable): MailMessage
+    public function toTelegram($notifiable)
     {
-        return (new MailMessage)
-            ->subject('Virtual Orientation System')
-            ->greeting('Hello ' . $notifiable->name . ',')
-            ->line('Thank you for registering with MyApp!')
-            ->line('We look forward to having you as a user.')
-            ->action('Go to MyApp', url('/'))
-            ->line('Thank you for using MyApp!');
+        $post = 'New Blog Posted' . "\n\n";
+        $post .= 'Title: ' . $this->post->title . "\n";
+        $post .= 'User Id: ```' . $this->post->user_id . "```\n\n";
+
+
+        Log::info($this->post->title);
+
+
+        return TelegramMessage::create()
+            ->to('-1001744163748')
+            ->content("UP \n\n" . $post);
     }
 
     /**

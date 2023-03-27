@@ -3,8 +3,18 @@
     <div class="container">
         <div>
             <div class="card shadow p-3 mb-3">
+                <p class="text-center">
+                    You are Chatting with the Admin
+                </p>
+                <hr>
                 @foreach($chatMessages as $chatMessage)
                     @if($chatMessage->sender_id == auth()->user()->id)
+                        <div class="text-capitalize">
+                            <p class="float-end">
+                                {{ $chatMessage->content }}
+                            </p>
+                        </div>
+                    @else
                         <div class="text-muted text-capitalize">
                             {{ $chatMessage->content }}
                         </div>

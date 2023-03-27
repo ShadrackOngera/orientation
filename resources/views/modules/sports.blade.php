@@ -3,16 +3,30 @@
     <div class="container">
         <div>
             <h1>Module 5: School Sporting</h1>
-            <h2>Sporting activities, utilities, grounds  and timetables/h2>
+            <h2>Sporting activities, utilities, grounds  and timetables</h2>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus animi aperiam aspernatur at commodi corporis dicta dolorum fuga inventore, laudantium minima mollitia nam quasi quia quibusdam quidem repellendus sapiente sequi tempore totam unde, veniam? At, dicta dolores enim error ex illo in, nesciunt obcaecati quaerat quis reiciendis velit vitae.
+                The psychology of sport is an ever-expanding area that looks to establish a way of enhancing athlete, player and other high performing groups outcomes.
             </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum fuga obcaecati officiis suscipit ullam? Accusantium debitis eligendi est obcaecati ullam.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab consequatur delectus facere laborum obcaecati pariatur recusandae repellat ullam. Architecto nam nostrum nulla officia perspiciatis recusandae, totam voluptatum! Ad at debitis distinctio labore odio. Accusantium ad commodi consectetur corporis cum cumque deleniti dicta dignissimos, dolor dolorum eligendi eum expedita laudantium magni nam nobis nostrum numquam obcaecati officiis perferendis quae quis repellendus reprehenderit sapiente sequi sit soluta sunt tempore voluptatibus voluptatum. At consequatur debitis dolore est illum officia repellendus rerum voluptatem. Atque dolores dolorum eligendi error magni officia recusandae saepe sapiente, sed sequi sunt suscipit vero voluptates! Architecto assumenda expedita illo mollitia temporibus? Ab asperiores beatae consequatur cupiditate, debitis dicta dolor facilis, harum illum labore magnam molestiae mollitia necessitatibus non odio optio, placeat porro quo repellendus reprehenderit saepe suscipit veritatis vero vitae voluptates? Ad ipsam mollitia natus nobis odit omnis quam tempora. A animi asperiores at doloribus esse, hic id perspiciatis similique.
-            </p>
+            <div class="row mb-3 text-center">
+                <div class="col-sm-6 py-3 align-self-center">
+                    This is done through an evidence-based approach informed by research to allow practitioners to meet that aim.
+
+                    Our MSc puts you at the forefront of this process and immerses you into sport psychology in a supportive and challenging way. You begin by examining theory and research within sport psychology and then move onto looking at ways of applying that theory as a researcher and potential practitioner.
+
+                    You finish your degree with a period in the workplace assisting relevant groups with performance enhancement and researching a topic that will hopefully give you the chance to contribute to the body of literature within sport psychology and inform future practices.
+                </div>
+                <div class="col-sm-6">
+                    <img src="{{ asset('images/vid.png') }}" alt="" class="img-fluid">
+                </div>
+            </div>
+
+            <div class="text-center">
+                <small>
+                    The research component of the course initially gives you the necessary tools of measurement to make an informed decision on how to go about gathering data for a larger project within an area that you find interesting in sport psychology.
+                </small>
+            </div>
+            <hr>
+            <hr>
         </div>
 
         <div id="carouselExampleIndicators" class="carousel slide mb-3">
@@ -24,7 +38,7 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{asset('images/lib-one.jpg')}}" class="d-block w-100" alt="Library One">
+                    <img src="{{asset('images/uni.jpeg')}}" class="d-block w-100" alt="Library One">
                 </div>
                 <div class="carousel-item">
                     <img src="{{asset('images/lib-two.jpg')}}" class="d-block w-100" alt="...">

@@ -26,6 +26,10 @@ Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])-
 Route::get('/dashboard/chat', [App\Http\Controllers\ChatController::class, 'index'])->name('chat.index');
 Route::post('/dashboard/chats', [App\Http\Controllers\ChatController::class, 'store'])->name('chat.store');
 
+//Feedback
+Route::get('/dashboard/feedback', [App\Http\Controllers\FeedbackController::class, 'index'])->name('feedback.index');
+Route::post('/dashboard/feedbacks', [App\Http\Controllers\FeedbackController::class, 'store'])->name('feedback.store');
+
 
 //Module Routes
 Route::group([
