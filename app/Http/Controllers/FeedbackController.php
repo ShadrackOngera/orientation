@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Feedback;
 use Illuminate\Http\Request;
 
 class FeedbackController extends Controller
@@ -27,7 +28,24 @@ class FeedbackController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = auth()->user();
+//        $user = User::findOrFail(Auth::user());
+
+        $request->validate([
+            'content' => 'required',
+            'comfort' => 'required',
+            'likely' => 'required',
+        ]);
+
+
+        $feeback = Feedback::create([
+            'content' => $request->input('content'),
+            'comfort' => $request->input('comfort'),
+            'likely' => $request->input('likely'),
+            'sender_id' => $user->id,
+        ]);
+
+        return redirect()->back();
     }
 
     /**
