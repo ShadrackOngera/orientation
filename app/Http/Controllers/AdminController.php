@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Feedback;
 use App\Models\User;
 use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
@@ -13,8 +14,10 @@ class AdminController extends Controller
         //admin home page
         $users_count = User::count();
         $admins_count = User::role('admin')->count();
+        $feedback_count = Feedback::count();
         return view('admin.index')
             ->with('users_count', $users_count)
+            ->with('feedback_count', $feedback_count)
             ->with('admins_count', $admins_count);
     }
 
