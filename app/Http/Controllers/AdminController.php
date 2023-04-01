@@ -36,15 +36,4 @@ class AdminController extends Controller
         $pdf->setPaper('A4', 'portrait');
         return $pdf->download('users.pdf');
     }
-
-    //this global class is used to print the users list, which is in the composer.lock DOM PDF configurations
-//    public function exportPdf(){
-//        $allUsers = User::get();
-//        $pdf = (new \Barryvdh\DomPDF\PDF)->loadView('admin.users',
-//            [
-//                'allUsers'=>$allUsers,
-//            ]);
-//
-//        return $pdf->download('users.pdf');
-//    }
 }
