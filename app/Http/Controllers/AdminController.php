@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Feedback;
 use App\Models\User;
-use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class AdminController extends Controller
 {
@@ -29,14 +29,22 @@ class AdminController extends Controller
             ->with('users', $users);
     }
 
-    //this global class is used to print the users list, which is in the composer.lock DOM PDF configurations
-    public function exportPdf(){
-        $allUsers = User::get();
-        $pdf = (new \Barryvdh\DomPDF\PDF)->loadView('admin.users',
-            [
-                'allUsers'=>$allUsers,
-            ]);
-
+    public function exportPdf()
+    {
+        $users = User::get();
+        $pdf = \PDF::loadHTML(view('admin.users', ['users' => $users]));
+        $pdf->setPaper('A4', 'portrait');
         return $pdf->download('users.pdf');
     }
+
+    //this global class is used to print the users list, which is in the composer.lock DOM PDF configurations
+//    public function exportPdf(){
+//        $allUsers = User::get();
+//        $pdf = (new \Barryvdh\DomPDF\PDF)->loadView('admin.users',
+//            [
+//                'allUsers'=>$allUsers,
+//            ]);
+//
+//        return $pdf->download('users.pdf');
+//    }
 }
