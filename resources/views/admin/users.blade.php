@@ -3,7 +3,7 @@
     <div class="container">
         <h3>You are an viewing the Admin Home page</h3>
         <hr class="mb-3">
-        <a href="{{ route('export.users') }}" class="btn btn-outline-secondary">Export Lists To PDF</a>
+        <a href="{{ route('export.users') }}" class="btn btn-outline-primary">Export Lists To PDF</a>
         <table class="table">
             <thead>
                 <tr>
