@@ -34,6 +34,33 @@
                         </div>
 
                         <div class="row mb-3">
+                            <label for="registration_number" class="col-form-label">{{ __('Registration number') }}</label>
+
+                            <input id="registration_number" type="text" class="form-control @error('registration_number') is-invalid @enderror" name="registration_number" value="{{ old('registration_number') }}" required autocomplete="registration_number" autofocus>
+
+                            @error('registration_number')
+                            <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="school" class="col-form-label">{{ __('School') }}</label>
+
+                            <select class="form-select mb-3 py-3" aria-label="Default select example" name="school" required>
+                                <option value="School of Computing and Informatics">School of Computing and Informatics</option>
+                                <option value="School of Health Science">School of Health Science</option>
+                            </select>
+
+                            @error('school')
+                            <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label">{{ __('Email Address') }}</label>
 
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">

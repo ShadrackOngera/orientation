@@ -36,18 +36,13 @@ class UserSeeder extends Seeder
            'first_name' => 'Collins',
            'last_name' => 'Muli',
            'email' => 'Collins@domain.com',
+           'school' => 'School of Computing and Informatics',
+           'registration_number' => 'CT201/102137/20',
             'password' => Hash::make('password'),
         ]);
 
-        $mainUserTwo = \App\Models\User::create([
-            'first_name' => 'Shadrack',
-            'last_name' => 'Ongera',
-            'email' => 'Shadrack@domain.com',
-            'password' => Hash::make('password'),
-        ]);
 
         $mainUserOne->assignRole($adminRole);
-        $mainUserTwo->assignRole($adminRole);
 
     }
 }

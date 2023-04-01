@@ -20,6 +20,8 @@ class UserFactory extends Factory
         return [
             'first_name' => fake()->firstName(),
             'last_name' => fake()->lastName(),
+            'school' => $this->faker->randomElement(['School of Computing and Informatics', 'School of Engineering', 'School of health science']),
+            'registration_number' => $this->faker->unique()->regexify('CT201/\d{6}/\d{2}'),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => bcrypt('password'),
