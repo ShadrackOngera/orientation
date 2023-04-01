@@ -6,6 +6,8 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use NotificationChannels\Telegram\TelegramChannel;
+use NotificationChannels\Telegram\TelegramMessage;
 
 class UserRegisteredNotification extends Notification
 {
@@ -34,17 +36,16 @@ class UserRegisteredNotification extends Notification
      */
     public function toTelegram($notifiable)
     {
-        $post = 'New Blog Posted' . "\n\n";
-        $post .= 'Title: ' . $this->post->title . "\n";
-        $post .= 'User Id: ```' . $this->post->user_id . "```\n\n";
-
-
-        Log::info($this->post->title);
-
+        $message = 'New Blog Posted' . "\n\n";
+        $message .= 'School: ' . $notifiable->school . "\n";
+        $message .= 'First Name: ' . $notifiable->first_name . "\n";
+        $message .= 'Last Name: ' . $notifiable->last_name . "\n";
+        $message .= 'Registration Number: ' . $notifiable->registration_number . "\n";
+        $message .= 'email: ```' . $notifiable->email . "```\n\n";
 
         return TelegramMessage::create()
-            ->to('-1001744163748')
-            ->content("UP \n\n" . $post);
+            ->to('-960663840')
+            ->content("UP \n\n" . $message);
     }
 
     /**
