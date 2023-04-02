@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Notifications\UserRegisteredNotification;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use http\Client\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Notification;
@@ -79,7 +80,6 @@ class RegisterController extends Controller
         ]);
 
         $user->notify(new UserRegisteredNotification($user));
-
         return $user;
     }
 }
