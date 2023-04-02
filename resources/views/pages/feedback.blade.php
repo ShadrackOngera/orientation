@@ -9,7 +9,41 @@
             @endif
         </div>
 
-        <h3>Welcome to Our Feedback page</h3>
+        <h3 class="text-center mb-3">Feedback page</h3>
+
+        <div class="row">
+            <div class="col-sm-6 text-center">
+                <div class="card shadow">
+                    <div class="rating py-3">
+                        <span class="me-3">Likely Rating</span>
+                        @for ($i = 1; $i <= 5; $i++)
+                            @if ($i <= $likely_rating)
+                                <span class="bi bi-star-fill text-warning"></span>
+                            @else
+                                <span class="bi bi-star"></span>
+                            @endif
+                        @endfor
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 text-center">
+                <div class="card shadow">
+                    <div class="rating py-3">
+                        <span class="me-3">Comfortable Rating</span>
+                        @for ($i = 1; $i <= 5; $i++)
+                            @if ($i <= $comfortable_rating)
+                                <span class="bi bi-star-fill text-warning"></span>
+                            @else
+                                <span class="bi bi-star"></span>
+                            @endif
+                        @endfor
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="py-5"></div>
+
+
         <form action="{{ route('feedback.store') }}" method="POST">
             @csrf
             <div>

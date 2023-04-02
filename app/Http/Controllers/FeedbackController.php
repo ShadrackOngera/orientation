@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Feedback;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FeedbackController extends Controller
 {
@@ -12,7 +13,12 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        return view('pages.feedback');
+        $likely_rating = DB::table('feedback')->avg('likely');
+        $comfortable_rating = DB::table('feedback')->avg('likely');
+
+        return view('pages.feedback')
+            ->with('likely_rating', $likely_rating)
+            ->with('comfortable_rating', $comfortable_rating);
     }
 
     /**
