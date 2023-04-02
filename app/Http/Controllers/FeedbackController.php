@@ -38,14 +38,15 @@ class FeedbackController extends Controller
         ]);
 
 
-        $feeback = Feedback::create([
+        $feedback = Feedback::create([
             'content' => $request->input('content'),
             'comfort' => $request->input('comfort'),
             'likely' => $request->input('likely'),
             'sender_id' => $user->id,
         ]);
 
-        return redirect()->back();
+        $message = 'Your Feedback has been Received';
+        return redirect('/dashboard')->with('message', $message);
     }
 
     /**

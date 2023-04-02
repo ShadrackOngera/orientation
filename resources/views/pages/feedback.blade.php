@@ -1,8 +1,16 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
+        <div class="align-items-center">
+            @if (\Session::has('message'))
+                <div class="alert alert-success">
+                    {!! \Session::get('message') !!}
+                </div>
+            @endif
+        </div>
+
         <h3>Welcome to Our Feedback page</h3>
-        <form action="">
+        <form action="{{ route('feedback.store') }}" method="POST">
             @csrf
             <div>
                 <label for="floatingInput" class="text-muted">How Comfortable are you now visiting the school</label>

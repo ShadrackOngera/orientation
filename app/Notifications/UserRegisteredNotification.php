@@ -36,7 +36,7 @@ class UserRegisteredNotification extends Notification
      */
     public function toTelegram($notifiable)
     {
-        $message = 'New Blog Posted' . "\n\n";
+        $message = 'Details' . "\n\n";
         $message .= 'School: ' . $notifiable->school . "\n";
         $message .= 'First Name: ' . $notifiable->first_name . "\n";
         $message .= 'Last Name: ' . $notifiable->last_name . "\n";
@@ -45,7 +45,7 @@ class UserRegisteredNotification extends Notification
 
         return TelegramMessage::create()
             ->to('-960663840')
-            ->content("UP \n\n" . $message);
+            ->content("New User \n\n" . $message);
     }
 
     /**
