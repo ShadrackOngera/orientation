@@ -13,6 +13,7 @@
                     <th scope="col">Reg Number</th>
                     <th scope="col">School</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Progress</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,6 +25,7 @@
                     <td>{{ $user->registration_number }}</td>
                     <td>{{ $user->school }}</td>
                     <td>{{ $user->email }}</td>
+                    <td>{{ $user->progress }}</td>
                 </tr>
             @endforeach
             </tbody>

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <small>Hello <strong>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</strong>, This is your Dashboard</small>
+    <small>Hello <strong>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</strong>, This is your Dashboard. Your Current Progress is <strong>{{ Auth::user()->progress }}%</strong></small>
     <hr>
 
     <div class="row justify-content-center">

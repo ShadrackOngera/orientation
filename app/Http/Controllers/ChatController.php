@@ -15,10 +15,11 @@ class ChatController extends Controller
      */
     public function index()
     {
-
+        $users = User::get();
         $chatMessages = ChatMessage::get();
 
         return view('pages.chat')
+            ->with('users', $users)
             ->with('chatMessages', $chatMessages);
     }
 
@@ -36,7 +37,7 @@ class ChatController extends Controller
     public function store(Request $request)
     {
 
-        $user = auth()->user();
+        $user = auth()->user()->firstOrFail();
 //        $user = User::findOrFail(Auth::user());
 
         $request->validate([

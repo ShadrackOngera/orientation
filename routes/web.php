@@ -40,6 +40,7 @@ Route::group([
     Route::get('/sport', [App\Http\Controllers\ModuleController::class, 'sportsModule'])->name('modules.sports');
     Route::get('/cafeteria', [App\Http\Controllers\ModuleController::class, 'cafeteriaModule'])->name('modules.cafeteria');
     Route::get('/classes', [App\Http\Controllers\ModuleController::class, 'classesModule'])->name('modules.classes');
+    Route::get('/update', [App\Http\Controllers\ModuleController::class, 'progressIncrease'])->name('modules.progress');
 });
 
 
