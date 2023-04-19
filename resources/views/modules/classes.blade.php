@@ -48,6 +48,10 @@
         <div class="mb-3">
             <div class="d-flex justify-content-between">
                 <a href="{{ route('dashboard') }}" class="btn btn-secondary">Dashboard</a>
+                <form action="{{ route('update.progress') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-info text-white">Update Progress</button>
+                </form>
                 <a href="{{ route('modules.cafeteria') }}" class="btn btn-primary">Next: Cafeteria</a>
             </div>
         </div>
