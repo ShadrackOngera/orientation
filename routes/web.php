@@ -18,7 +18,6 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-//Route::post('login/regnumber', 'Auth\LoginController@loginWithRegNumber')->name('login.regnumber');
 Route::post('login/regnumber', [App\Http\Controllers\Auth\LoginController::class, 'loginWithRegNumber'])->name('login.regnumber');
 
 
@@ -39,7 +38,6 @@ Route::post('/dashboard/feedbacks', [App\Http\Controllers\FeedbackController::cl
 Route::group([
     'prefix' => 'module',
 ], function () {
-//    Route::post('/update-progress', 'UserController@updateProgress')->name('update.progress');
     Route::get('/library', [App\Http\Controllers\ModuleController::class, 'libraryModule'])->name('modules.library');
     Route::get('/lab', [App\Http\Controllers\ModuleController::class, 'labsModule'])->name('modules.lab');
     Route::get('/sport', [App\Http\Controllers\ModuleController::class, 'sportsModule'])->name('modules.sports');

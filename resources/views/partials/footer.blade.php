@@ -14,6 +14,12 @@
                         <a href="{{ route('dashboard') }}" class="nav-link">Dashboard</a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{ route('chat.index') }}" class="nav-link">Community</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('feedback.index') }}" class="nav-link">Feedback</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{ route('login') }}" class="nav-link">Login</a>
                     </li>
                     <li class="nav-item">
@@ -58,6 +64,10 @@
                             </form>
                         </div>
                     </div>
+
+                    <p class="h4">
+                        <a href="{{ route('feedback.index') }}" class="nav-link">Feedback</a>
+                    </p>
 
                 </div>
             </div>
