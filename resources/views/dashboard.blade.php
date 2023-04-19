@@ -2,13 +2,15 @@
 
 @section('content')
 <div class="container">
-    <small>Hello <strong>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</strong>, This is your Dashboard. Your Current Progress is <strong>{{ Auth::user()->progress }}%</strong></small>
+    <p class="text-muted fs-5">Hello {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}, This is your Dashboard. Your Current Progress is <strong>{{ Auth::user()->progress }}%</strong></p>
     <hr>
+    <div class="py-3"></div>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mb-3">
         Start a virtual tour
     </div>
-    <div class="mb-3 d-flex justify-content-center align-items-center">
+
+    <div class="mb-3 d-flex justify-content-md-between align-items-center">
         <a href="{{ route('modules.library') }}" class="btn btn-outline-primary">Library</a>
         <span class="text-primary">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
@@ -36,6 +38,39 @@
         <a href="{{ route('modules.sports') }}" class="btn btn-outline-primary">Sports</a>
     </div>
     <div class="py-5"></div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card shadow p-md-5">
+                <h4 class="text-muted">
+                    PERSONAL DETAILS
+                </h4>
+                <ul class="list-unstyled">
+                    <li class="nav-item">
+                        <span class="text-muted">Name:</span> {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}
+                    </li>
+                    <li class="nav-item">
+                        <span class="text-muted">Email:</span> {{ Auth::user()->email }}
+                    </li>
+                    <li class="nav-item">
+                        <span class="text-muted">Registration Number:</span> {{ Auth::user()->registration_number }}
+                    </li>
+                    <li class="nav-item">
+                        <span class="text-muted">School:</span> {{ Auth::user()->school }}
+                    </li>
+                    <li class="nav-item">
+                        <span class="text-muted">Progress:</span> {{ Auth::user()->progress }}%
+                    </li>
+                    <li class="nav-item">
+                        <span class="text-muted">Modules Completed:</span> {{ Auth::user()->progress/20 }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="py-5"></div>
+
     <div class="accordion" id="accordionExample">
         <h2>Frequently asked questions</h2>
         <div class="accordion-item">
