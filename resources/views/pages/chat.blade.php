@@ -20,7 +20,7 @@
         </div>
 
         <div class="">
-            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Enable both scrolling & backdrop</button>
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Select Who to chat with</button>
         </div>
         <div class="py-5"></div>
 
@@ -47,11 +47,11 @@
         </div>
         <form action="{{ route('chat.store') }}" method="POST">
             @csrf
-            <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave your Message here" name="content" id="floatingTextarea2" style="height: 100px"></textarea>
-                <label for="floatingTextarea2">Message</label>
-            </div>
-            <div class="col-sm-5 d-grid float-end">
+            <div class="input-group">
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave your Message here" name="content" id="floatingTextarea2" style="height: 65px"></textarea>
+                    <label for="floatingTextarea2">Message</label>
+                </div>
                 <button type="submit" class="btn btn-outline-primary">
                     Send
                 </button>
