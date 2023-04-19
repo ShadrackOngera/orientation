@@ -25,6 +25,7 @@ Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])-
 //chat
 Route::get('/dashboard/chat', [App\Http\Controllers\ChatController::class, 'index'])->name('chat.index');
 Route::post('/dashboard/chats', [App\Http\Controllers\ChatController::class, 'store'])->name('chat.store');
+Route::get('/dashboard/chat/{chat}', [App\Http\Controllers\ChatController::class, 'show'])->name('chat.show');
 
 //Feedback
 Route::get('/dashboard/feedback', [App\Http\Controllers\FeedbackController::class, 'index'])->name('feedback.index');

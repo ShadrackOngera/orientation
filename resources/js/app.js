@@ -6,6 +6,9 @@
 
 import './bootstrap';
 import { createApp } from 'vue';
+// import { Chat } from 'vue-quick-chat';
+// import 'vue-quick-chat/dist/vue-quick-chat.css';
+
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
@@ -16,7 +19,11 @@ import { createApp } from 'vue';
 const app = createApp({});
 
 import ExampleComponent from './components/ExampleComponent.vue';
+import ChatComponent from './components/ChatComponent.vue';
+
+
 app.component('example-component', ExampleComponent);
+app.component('chat-component', ChatComponent);
 
 /**
  * The following block of code may be used to automatically register your
@@ -37,3 +44,9 @@ app.component('example-component', ExampleComponent);
  */
 
 app.mount('#app');
+
+// export default {
+//     components: {
+//         Chat
+//     },
+// }

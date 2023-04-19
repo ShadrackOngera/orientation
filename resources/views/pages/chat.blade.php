@@ -20,26 +20,29 @@
         </div>
 
         <div class="">
-            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Select Who to chat with</button>
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">View Participants</button>
         </div>
         <div class="py-5"></div>
 
         <div>
             <div class="card shadow p-3 mb-3">
                 <p class="text-center">
-                    You are Chatting with the Admin
+                    General Group Chat
                 </p>
                 <hr>
                 @foreach($chatMessages as $chatMessage)
                     @if($chatMessage->sender_id == auth()->user()->id)
-                        <div class="text-capitalize">
-                            <p class="float-end">
-                                {{ $chatMessage->content }}
+                        <div class="float-end bg-primary-fade mb-1 rounded-4">
+                            <p class="float-end me-4 mt-2">
+                                {!! nl2br(e($chatMessage->content)) !!}
                             </p>
                         </div>
                     @else
-                        <div class="text-muted text-capitalize">
-                            {{ $chatMessage->content }}
+                        <div class="text-muted text-capitalize bg-light mb-1 rounded-5 border">
+                            <small class="fw-bold text-dark ms-4">{{ $chatMessage->user->first_name }} {{ $chatMessage->user->last_name }}</small>
+                            <p class="text-muted ms-5">
+                                {!! nl2br(e($chatMessage->content)) !!}
+                            </p>
                         </div>
                     @endif
                 @endforeach
@@ -52,6 +55,7 @@
                     <textarea class="form-control" placeholder="Leave your Message here" name="content" id="floatingTextarea2" style="height: 65px"></textarea>
                     <label for="floatingTextarea2">Message</label>
                 </div>
+                <input type="number" value="{{ auth()->user()->id }}" name="sender_id" hidden>
                 <button type="submit" class="btn btn-outline-primary">
                     Send
                 </button>

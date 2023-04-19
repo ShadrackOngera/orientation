@@ -37,17 +37,17 @@ class ChatController extends Controller
     public function store(Request $request)
     {
 
-        $user = auth()->user()->firstOrFail();
+//        $user = auth()->user()->firstOrFail();
 //        $user = User::findOrFail(Auth::user());
 
         $request->validate([
             'content' => 'required',
+            'sender_id' => 'required',
         ]);
-
 
         $chat = ChatMessage::create([
             'content' => $request->input('content'),
-            'sender_id' => $user->id,
+            'sender_id' => $request->input('sender_id'),
             'receiver_id' => 1,
         ]);
 
