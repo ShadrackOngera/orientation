@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Auth;
 
 class ModuleController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth', ['except' => ['cafeteriaModule', 'classesModule', 'libraryModule', 'sportsModule', 'labsModule']]);
+    }
 
     public function updateProgress()
     {
@@ -50,17 +53,5 @@ class ModuleController extends Controller
 
         //Kitchen Module Controller
         return view('modules.labs');
-    }
-
-    public function progressIncrease()
-    {
-        $user = Auth::user(); // Get the authenticated user
-        $currentProgress = $user->progress;
-        $newProgress = $currentProgress + 20;
-
-        // Update the user's progress field
-        $user->update(['progress' => $newProgress]);
-
-        return redirect()->back();
     }
 }

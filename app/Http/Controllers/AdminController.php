@@ -9,6 +9,9 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 class AdminController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     //Global class used to show admin home page
     public function index(){
         //admin home page
