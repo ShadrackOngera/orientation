@@ -39,12 +39,13 @@ Route::post('/dashboard/feedbacks', [App\Http\Controllers\FeedbackController::cl
 Route::group([
     'prefix' => 'module',
 ], function () {
+//    Route::post('/update-progress', 'UserController@updateProgress')->name('update.progress');
     Route::get('/library', [App\Http\Controllers\ModuleController::class, 'libraryModule'])->name('modules.library');
     Route::get('/lab', [App\Http\Controllers\ModuleController::class, 'labsModule'])->name('modules.lab');
     Route::get('/sport', [App\Http\Controllers\ModuleController::class, 'sportsModule'])->name('modules.sports');
     Route::get('/cafeteria', [App\Http\Controllers\ModuleController::class, 'cafeteriaModule'])->name('modules.cafeteria');
     Route::get('/classes', [App\Http\Controllers\ModuleController::class, 'classesModule'])->name('modules.classes');
-    Route::get('/update', [App\Http\Controllers\ModuleController::class, 'progressIncrease'])->name('modules.progress');
+    Route::post('/update-progress', [App\Http\Controllers\ModuleController::class, 'updateProgress'])->name('update.progress');
 });
 
 

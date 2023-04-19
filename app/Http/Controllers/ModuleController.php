@@ -7,6 +7,21 @@ use Illuminate\Support\Facades\Auth;
 
 class ModuleController extends Controller
 {
+
+    public function updateProgress()
+    {
+        $user = auth()->user();
+        $user->progress += 20;
+
+        if ($user->progress > 100) {
+            $user->progress = 100;
+        }
+
+        $user->save();
+
+        return redirect()->back();
+    }
+
     public function cafeteriaModule(){
 
         //Kitchen Module Controller
