@@ -1,5 +1,12 @@
 @extends('layouts.app')
 @section('content')
+    @if(auth()->user()->progress < 60)
+        <form action="{{ route('update.progress') }}" method="POST">
+            @csrf
+            <button type="submit" class="btn btn-info text-white">Mark as Done</button>
+        </form>
+    @endif
+    <div class="py-2"></div>
     <div class="container">
         <div>
             <h1>Module 1: Classes in School</h1>
@@ -48,10 +55,12 @@
         <div class="mb-3">
             <div class="d-flex justify-content-between">
                 <a href="{{ route('dashboard') }}" class="btn btn-secondary">Dashboard</a>
-                <form action="{{ route('update.progress') }}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-info text-white">Update Progress</button>
-                </form>
+                @if(auth()->user()->progress < 60)
+                    <form action="{{ route('update.progress') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-info text-white">Mark as Done</button>
+                    </form>
+                @endif
                 <a href="{{ route('modules.cafeteria') }}" class="btn btn-primary">Next: Cafeteria</a>
             </div>
         </div>

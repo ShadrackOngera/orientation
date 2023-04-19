@@ -52,10 +52,12 @@
         <div class="mb-3">
             <div class="d-flex justify-content-between">
                 <a href="{{ route('dashboard') }}" class="btn btn-secondary">Dashboard</a>
-                <form action="{{ route('update.progress') }}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-info text-white">Update Progress</button>
-                </form>
+                @if(auth()->user()->progress < 20)
+                    <form action="{{ route('update.progress') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-info text-white">Update Progress</button>
+                    </form>
+                @endif
                 <a href="{{ route('modules.lab') }}" class="btn btn-primary">Next: Labs</a>
             </div>
         </div>
