@@ -18,6 +18,9 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+//Route::post('login/regnumber', 'Auth\LoginController@loginWithRegNumber')->name('login.regnumber');
+Route::post('login/regnumber', [App\Http\Controllers\Auth\LoginController::class, 'loginWithRegNumber'])->name('login.regnumber');
+
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
