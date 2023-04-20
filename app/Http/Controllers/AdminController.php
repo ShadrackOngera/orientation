@@ -35,7 +35,7 @@ class AdminController extends Controller
     public function exportPdf()
     {
         $users = User::get();
-        $pdf = \PDF::loadHTML(view('admin.users', ['users' => $users]));
+        $pdf = \PDF::loadHTML(view('admin.pdfusers', ['users' => $users]));
         $pdf->setPaper('A4', 'portrait');
         return $pdf->download('users.pdf');
     }

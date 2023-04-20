@@ -25,7 +25,7 @@
                     <td>{{ $user->registration_number }}</td>
                     <td>{{ $user->school }}</td>
                     <td>{{ $user->email }}</td>
-                    <td>{{ $user->progress }}</td>
+                    <td>{{ $user->progress }}%</td>
                 </tr>
             @endforeach
             </tbody>

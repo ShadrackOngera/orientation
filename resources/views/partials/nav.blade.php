@@ -15,8 +15,13 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ms-auto">
                 <li>
-                    <a href="{{ route('contact') }}"></a>
+                    <a href="{{ route('contact') }}">Contact</a>
                 </li>
+                @can('is admin')
+                    <li>
+                        <a href="{{ route('admin.home') }}">Admin Home</a>
+                    </li>
+                @endcan
                 <li>
                     <a href="{{ route('dashboard') }}"></a>
                 </li>
